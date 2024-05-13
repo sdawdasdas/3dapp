@@ -1,0 +1,241 @@
+<html>
+<head>
+    <title>3dapp model</title>
+    <link rel="stylesheet" href="/~jy317/static/css/font.css"/>
+    <link rel="stylesheet" href="/~jy317/static/css/index.css"/>
+    <link rel="stylesheet" href="/~jy317/static/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/~jy317/static/x3dom/x3dom.css"/>
+    <script src="/~jy317/static/jquery/jquery.js"></script>
+    <script src="/~jy317/static/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/~jy317/static/x3dom/x3dom.js"></script>
+    <script src="/~jy317/static/index.js"></script>
+</head>
+<body>
+<div class="logo">
+    <a class="navbar-brand" href="#">
+        <h1>1oca</h1>
+        <h2>Cola</h2>
+        <h3>Journey</h3>
+    </a>
+</div>
+<div style="margin-top:20px;">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link " href="/~jy317/3dapp/tp5/index.php">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/~jy317/3dapp/tp5/index.php?type=model">Model</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
+        </li>
+    </ul>
+</div>
+<div  id="model1">
+    <div class="card text-left">
+        <div class="card-body">
+            <div class="model-title">{$product.name}</div>
+            <div class="card-title title_gallery drinksText">
+                <a href="index.php?type=model" type="button"  id="CokeSwitch" class="btn btn-success btn-responsive">Coke
+                </a>
+                <a href="index.php?type=model&cat=sprite" type="button" id="SpriteSwitch" class="btn btn-success btn-responsive">Sprite
+                </a>
+                <a href="index.php?type=model&cat=fenta" type="button" id="PepperSwitch" class="btn btn-success btn-responsive">Fenta
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="coca_x3d">
+        {if condition="!isset($_GET['cat'])||$_GET['cat']=='coca'"}
+        <x3d style="width:100%;">
+            <scene>
+                <directionalLight id="light1" direction='-1 -1 -1'  intensity='0'></directionalLight>
+                <directionalLight id="light2" direction='2 2 1'  intensity='0'></directionalLight>
+                <inline nameSpaceName="axes1" onclick="stopAnimation();" mapDEFToID="true" url="/~jy317/static/model/new_coca.x3d">   </inline>
+                <viewpoint  fieldOfView='0.5274' position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.307107 0.0 1.141593"
+                >
+                    <viewpoint id="left" fieldOfView='0.5274' position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.707107 0.0 4"
+                >
+                    <viewpoint id="right" fieldOfView='0.5274' position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 4.6"
+                >
+                    <viewpoint id="front" fieldOfView='0.5274' position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform id="shexiang" DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 -4.6">
+                    <viewpoint id="back" fieldOfView='0.5274' position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+            </scene>
+        </x3d>
+        {/if}
+        {if condition="isset($_GET['cat'])&&$_GET['cat']=='sprite'"}
+        <x3d style="width:100%;">
+            <scene>
+                <directionalLight id="light1" direction='-1 1 -1'  intensity='0'></directionalLight>
+                <directionalLight id="light2" direction='2 2 1'  intensity='0'></directionalLight>
+                <Transform  scale="0.025 0.025 0.025">
+                    <inline nameSpaceName="axes1" onclick="stopAnimation();" mapDEFToID="true" url="/~jy317/static/model/xuebi.x3d">   </inline>
+                </Transform>
+                <viewpoint  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.307107 0.0 1.141593"
+                >
+                    <viewpoint id="left"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.707107 0.0 4"
+                >
+                    <viewpoint id="right"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 4.6"
+                >
+                    <viewpoint id="front"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform id="shexiang" DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 -4.6">
+                    <viewpoint id="back" position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+            </scene>
+        </x3d>
+        {/if}
+        <?php if(isset($_GET['cat'])&&($_GET['cat']=='fenta')){ ?>
+        <x3d style="width:100%;">
+            <scene>
+                <directionalLight id="light1" direction='-1 1 -1'  intensity='0'></directionalLight>
+                <directionalLight id="light2" direction='2 2 1'  intensity='0'></directionalLight>
+                <Transform  scale="0.025 0.025 0.025">
+                    <inline nameSpaceName="axes1" onclick="stopAnimation();" mapDEFToID="true" url="/~jy317/static/model/fenta.x3d">   </inline>
+                </Transform>
+                <viewpoint  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.307107 0.0 1.141593"
+                >
+                    <viewpoint id="left"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.000000 0.707107 0.0 4"
+                >
+                    <viewpoint id="right"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 4.6"
+                >
+                    <viewpoint id="front"  position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+                <Transform id="shexiang" DEF="摄像机_001_TRANSFORM"
+                           translation="0.000000 0.0 0.000000"
+                           scale="1.000000 1.000000 1.000000"
+                           rotation="0.2 0.0 0.0 -4.6">
+                    <viewpoint id="back" position='0 0 6' orientation='0 0 1 0' centerOfRotation='0 0 0' description='Camera View'></viewpoint>
+                </Transform>
+            </scene>
+        </x3d>
+        <?php }?>
+    </div>
+
+    <div id="interaction" class="row">
+        <div class="col-sm-4">
+            <div class="card text-left">
+                <div class="card-body">
+                    <div class="card-Title x3dCamera_Subtitle drinksText">
+                        <h3>Camera Views</h3>
+                    </div>
+                    <button  class="btn btn-success btn-responsive" id="frontSet">Front</button>
+                    <button  class="btn btn-primary btn-responsive CameraBack" id="backSet">Back</button>
+                    <button  class="btn btn-secondary btn-responsive CameraLeft" id="leftSet">Left</button>
+                    <button  class="btn btn-outline-dark btn-responsive CameraRight" id="rightSet">Right</button>
+                    <div class="card-text x3dCameraDescription drinksText">
+                        <p>These buttons select a limited range of X3D model viewpoints, use the dropdown menu for more
+                            camera views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column for the animation controls -->
+        <div class="col-sm-4">
+            <div class="card text-left">
+                <div class="card-body">
+                    <div class="card-Title x3dAnimationSubtitle drinksText">
+                        <h3>Animation Options</h3>
+                    </div>
+                    <span class="btn btn-success btn-responsive AnimationRotX" id="rotateX">RotX</span>
+                    <span class="btn btn-primary btn-responsive AnimationRotY" id="rotateY">RotY</span>
+                    <span class="btn btn-secondary btn-responsive AnimationRotZ" id="rotateZ">RotZ</span>
+                    <span class="btn btn-outline-dark btn-responsive AnimationRotStop" id="stopRotate">Stop</span>
+                    <div class="card-text x3dAnimationDescription drinksText">
+                        <p>These buttons select a range of X3D animation options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column for the render type and lighting controls -->
+        <div class="col-sm-4">
+            <div class="card text-left">
+                <div class="card-body">
+                    <div class="card-Title x3dRendersubtitle drinksText">
+                        <h3>Render and Lighting Options</h3>
+                    </div>
+                    <span class="btn btn-secondary btn-responsive RenderWire" id="light1Set">light1</span>
+                    <span class="btn btn-outline-dark btn-responsive RenderDefault" id="light2Set">light2</span>
+                    <div class="card-text x3dRenderDescription drinksText">
+                        <p>These buttons select a limited number of render and lighting options; use the dropdown menus
+                            for more options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">3D App Contact Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="position:static;left:0;padding: 10px 20px !important;">
+                Email: jy317@sussex.ac.uk
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
